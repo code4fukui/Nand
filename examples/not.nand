@@ -1,6 +1,6 @@
 # 2. not
 function not(a)
-  return a nor a
+  return a nand a
 end
 
 print not(0)

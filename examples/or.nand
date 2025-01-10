@@ -1,10 +1,10 @@
-# 3. or
+# 4. or
 function not(a)
-  return a nor a
+  return a nand a
 end
 
 function or(a, b)
-  return not(a nor b)
+  return not(a) nand not(b)
 end
 
 print or(0, 0)
