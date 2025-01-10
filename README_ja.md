@@ -231,3 +231,4 @@ n = rnd() # 0以上1未満のランダムな小数をnに代入する
 ## reference
 
 - [Wirth](https://github.com/code4fukui/Wirth)
+- [Nor](https://github.com/code4fukui/Nor)
