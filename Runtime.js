@@ -280,8 +280,8 @@ export class Runtime {
       const n = this.calcExpression(ast.left, scope);
       const m = this.calcExpression(ast.right, scope);
       const op = ast.operator;
-      if (op == "nor") {
-        return n || m ? 0 : 1;
+      if (op == "nand") {
+        return n && m ? 0 : 1;
       } else {
         throw new Error("unsupported operator : " + op);
       }

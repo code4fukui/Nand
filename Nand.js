@@ -10,12 +10,12 @@ const reserved = [
   "loop", "next", "break",
   "function", "return", "end",
   //"and", "or", "not",
-  "nor",
+  "nand",
 ];
 
 const isNumber = (c) => "0123456789".indexOf(c) >= 0;
 
-export class Nor {
+export class Nand {
   constructor(s, callbackoutput) {
     this.s = s.replaceAll("\r", "");
     this.callbackoutput = callbackoutput;
@@ -69,8 +69,8 @@ export class Nor {
           this.p--;
           const w = res.join("");
           if (reserved.indexOf(w) >= 0) {
-            if (w == "nor") {
-              return { pos, type: "operator", operator: "nor" };
+            if (w == "nand") {
+              return { pos, type: "operator", operator: w };
             }
             return { pos, type: w };
           } else {
@@ -147,11 +147,11 @@ export class Nor {
         return res;
       }
       const v2 = this.getValue(); // this.getExpression1();
-      if (op.operator == "nor") {
+      if (op.operator == "nand") {
         res = {
           type: "BinaryExpression",
           left: res,
-          operator: "nor",
+          operator: op.operator,
           right: v2,
         };
       } else {

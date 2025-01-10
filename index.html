@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" href="data:">
-<title>Nor Playground</title>
+<title>Nand Playground</title>
 </head><body>
-<h1>Nor Playground</h1>
+<h1>Nand Playground</h1>
 
 examples <select id=selexamples></select> <label><input type=checkbox id=chkvar checked>show vars after run</label>
 <main>
@@ -9,8 +9,8 @@ examples <select id=selexamples></select> <label><input type=checkbox id=chkvar 
 <div class=diveditor id=divrun></div>
 </main>
 
-<a href=https://github.com/code4fukui/nor/blob/main/README.md>Nor Language Reference</a>
-<a href=https://github.com/code4fukui/Nor/>src on GitHub</a>
+<a href=https://github.com/code4fukui/Nand/blob/main/README.md>Nand Language Reference</a>
+<a href=https://github.com/code4fukui/Nand/>src on GitHub</a>
 
 <style>
 h1 {
@@ -28,7 +28,7 @@ a {
 </style>
 
 <script type="module">
-import { Nor } from "./Nor.js";
+import { Nand } from "./Nand.js";
 import { monaco } from "https://code4fukui.github.io/monaco-editor/monaco.js";
 import { CSV } from "https://js.sabae.cc/CSV.js";
 
@@ -78,7 +78,7 @@ const onchange = () => {
   run.setValue("");
   run.revealLine(1);
   try {
-    const runtime = new Nor(src, (s) => {
+    const runtime = new Nand(src, (s) => {
       run.setValue(run.getValue() + s + "\n");
     });
     runtime.run();
@@ -114,7 +114,7 @@ selexamples.oninput = async () => {
   onchange();
 };
 
-const fn = "nor.nor";
+const fn = "nand.nand";
 const fn0 = location.hash.substring(1) || fn;
 selexamples.value = fn0;
 selexamples.oninput();
