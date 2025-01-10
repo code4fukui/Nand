@@ -1,7 +1,7 @@
 import { dir2array } from "https://js.sabae.cc/dir2array.js";
 import { CSV } from "https://js.sabae.cc/CSV.js";
 
-const ext = ".nor";
+const ext = ".nand";
 
 const fns = await dir2array("examples");
 const list = [];

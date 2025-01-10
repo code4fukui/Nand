@@ -1,32 +1,32 @@
-# Nor - a one-operator programming language
+# Nand - a one-operator programming language
 
-![Nor logo](nor-logo.svg)
+![Nand logo](nand-logo.svg)
 
 [English](README.md) / [日本語](README_ja.md)
 
-Nor is structured programming language with only operator "nor". (forked [Wirth](https://github.com/code4fukui/Wirth))
+Nand is structured programming language with only operator "nand". (forked [Nor](https://github.com/code4fukui/Nor))
 
-The source file extension for Wirth is ".nor", and the MIME type will is "text/nor".
+The source file extension for Wirth is ".nand", and the MIME type will is "text/nand".
 
-- Runtime on web [Nor Playground](https://code4fukui.github.io/Nor/)
-- Embedded in HTML [Nor on web](https://code4fukui.github.io/Nor/norweb.html)
+- Runtime on web [Nand Playground](https://code4fukui.github.io/Nand/)
+- Embedded in HTML [Nand on web](https://code4fukui.github.io/Nand/nandweb.html)
 ```html
-<script type="module" src="https://code4fukui.github.io/Nor/web.js"></script>
-<script type="text/nor">
-print 1 nor 0
+<script type="module" src="https://code4fukui.github.io/Nand/web.js"></script>
+<script type="text/nand">
+print 1 nand 0
 </script>
 ```
 
-- CLI(Command Line Interface): calculation BMI [examples/add.nor](examples/add.nor)
+- CLI(Command Line Interface): calculation BMI [examples/add.nand](examples/add.nand)
 ```sh
-deno -A https://code4fukui.github.io/Nor/cli.js examples/add.nor
+deno -A https://code4fukui.github.io/Nand/cli.js examples/add.nand
 ```
 
-- app for debugging [nor2js](https://code4fukui.github.io/Nor/nor2js.html)
+- app for debugging [nor2js](https://code4fukui.github.io/Nand/nor2js.html)
 
 ## 1. Variables and Values
 
-A variable name consists of alphanumeric characters starting with a letter, along with underscores (_) or local characters. However, reserved words (such as nor, print, input, if, else, elseif, endif, loop, break, function, end, return) cannot be used as variable names.
+A variable name consists of alphanumeric characters starting with a letter, along with underscores (_) or local characters. However, reserved words (such as nand, print, input, if, else, elseif, endif, loop, break, function, end, return) cannot be used as variable names.
 
 - ex: n, sum, points
 
@@ -74,12 +74,12 @@ To assign values entered from external input, you can write the following statem
 
 ## 4. Operations
 
-Only one arithmetic operation "nor".
+Only one arithmetic operation "nand".
 
-- ex: val = 0 nor 0 (The value 1 is assigned to val.)
-- ex: val = 0 nor 1 (The value 0 is assigned to val.)
-- ex: val = 1 nor 0 (The value 0 is assigned to val.)
-- ex: val = 1 nor 1 (The value 0 is assigned to val.)
+- ex: val = 0 nand 0 (The value 1 is assigned to val.)
+- ex: val = 0 nand 1 (The value 0 is assigned to val.)
+- ex: val = 1 nand 0 (The value 0 is assigned to val.)
+- ex: val = 1 nand 1 (The value 0 is assigned to val.)
 
 ## 5. Conditional Statements
 
@@ -96,8 +96,8 @@ endif
 ex:
 ```
 if x
-  x = x nor 1
-  y = y nor 1
+  x = x nand 1
+  y = y nand 1
 endif
 ```
 
@@ -114,9 +114,9 @@ endif
 ex:
 ```
 if a
-  x = x nor 1
+  x = x nand 1
 else
-  x = x nor 0
+  x = x nand 0
 endif
 ```
 
@@ -135,11 +135,11 @@ endif
 ex:
 ```
 if a
-  x = x nor 1
+  x = x nand 1
 elseif b
-  y = y nor 1
+  y = y nand 1
 else
-  y = y nor 0
+  y = y nand 0
 endif
 ```
 
@@ -184,7 +184,7 @@ Variables defined outside a function can be referenced, but cannot be assigned a
 ex: "print_not(n)" that displays the value not n
 ```
 function print_not(n)
-  print n nor n
+  print n nand n
 end
 ```
 
@@ -193,7 +193,7 @@ Functions can be defined to return a value using "return". If "return" is used w
 ex: "or(a, b)" that returns the value the a or b by 1bit
 ```
 function or(a, b)
-  return not(a nor b)
+  return not(a nand b)
 end
 ```
 
@@ -217,3 +217,4 @@ multi-line comments
 ## reference
 
 - [Wirth](https://github.com/code4fukui/Wirth)
+- [Nor](https://github.com/code4fukui/Nor)

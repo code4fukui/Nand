@@ -1,32 +1,32 @@
-# Nor - 演算子が1つしかないプログラミング言語
+# Nand - 演算子が1つしかないプログラミング言語
 
-![Nor logo](nor-logo.svg)
+![Nand logo](nand-logo.svg)
 
 [English](README.md) / [日本語](README_ja.md)
 
-Norは、演算子として「nor」のみサポートする構造化プログラミング言語です。 ([Wirth](https://github.com/code4fukui/Wirth)をベースに開発されました。)
+Norは、演算子として「nand」のみサポートする構造化プログラミング言語です。 ([Nor](https://github.com/code4fukui/Nor)をベースに開発されました。)
 
-Norのソースファイル拡張子は「.nor」であり、MIMEタイプは「text/nor」となります。
+Norのソースファイル拡張子は「.nand」であり、MIMEタイプは「text/nand」となります。
 
-- ブラウザで動作する実行環境 [Nor Playground](https://code4fukui.github.io/Nor/)
-- HTMLへの組み込み例 [Nor on web](https://code4fukui.github.io/Nor/norweb.html)
+- ブラウザで動作する実行環境 [Nand Playground](https://code4fukui.github.io/Nand/)
+- HTMLへの組み込み例 [Nand on web](https://code4fukui.github.io/Nand/norweb.html)
 ```html
-<script type="module" src="https://code4fukui.github.io/Nor/web.js"></script>
-<script type="text/nor">
-print 1 nor 0
+<script type="module" src="https://code4fukui.github.io/Nand/web.js"></script>
+<script type="text/nand">
+print 1 nand 0
 </script>
 ```
 
-- CLI(Command Line Interface): 足し算 [examples/add.nor](examples/add.nor)
+- CLI(Command Line Interface): 足し算 [examples/add.nand](examples/add.nand)
 ```sh
-deno -A https://code4fukui.github.io/Nor/cli.js examples/add.nor
+deno -A https://code4fukui.github.io/Nand/cli.js examples/add.nand
 ```
 
-- デバッグ用アプリ [nor2js](https://code4fukui.github.io/Nor/nor2js.html)
+- デバッグ用アプリ [nand2js](https://code4fukui.github.io/Nand/nand2js.html)
 
 ## 1. 変数と値
 
-変数名は、英字で始まる英数字と「_」や日本語の並びです。ただし、予約語（nor, print, input, if, else, elseif, endif, loop, break, function, end, return）は変数名として使用できません。
+変数名は、英字で始まる英数字と「_」や日本語の並びです。ただし、予約語（nand, print, input, if, else, elseif, endif, loop, break, function, end, return）は変数名として使用できません。
 
 - 例: n, sum, points, 得点
 
@@ -86,10 +86,10 @@ print s[0],s[2] # A C と表示される
 
 演算子は「nor」のみ使用可能です。
 
-- 例: val = 0 nor 0 (valには1が代入されます。)
-- 例: val = 0 nor 1 (valには0が代入されます。)
-- 例: val = 1 nor 0 (valには0が代入されます。)
-- 例: val = 1 nor 1 (valには0が代入されます。)
+- 例: val = 0 nand 0 (valには1が代入されます。)
+- 例: val = 0 nand 1 (valには0が代入されます。)
+- 例: val = 1 nand 0 (valには0が代入されます。)
+- 例: val = 1 nand 1 (valには0が代入されます。)
 
 ## 5. 条件分岐文
 
@@ -106,8 +106,8 @@ endif
 例:
 ```
 if a
-  x = x nor 1
-  y = y nor 1
+  x = x nand 1
+  y = y nand 1
 endif
 ```
 
@@ -124,9 +124,9 @@ endif
 例
 ```
 if a
-  x = x nor 1
+  x = x nand 1
 else
-  x = x nor 0
+  x = x nand 0
 endif
 ```
 
@@ -145,11 +145,11 @@ endif
 例:
 ```
 if a
-  x = x nor 1
+  x = x nand 1
 elseif b
-  y = y nor 1
+  y = y nand 1
 else
-  y = y nor 0
+  y = y nand 0
 endif
 ```
 
@@ -197,7 +197,7 @@ end
 例: 値nの否定を表示する"print_not(n)"の定義例
 ```
 function print_not(n)
-  print n nor n
+  print n nand n
 end
 ```
 
@@ -206,7 +206,7 @@ end
 例: orの演算をする機能"or(a, b)"の定義例
 ```
 function or(a, b)
-  return not(a nor b)
+  return not(a nand b)
 end
 ```
 
