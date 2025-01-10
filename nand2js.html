@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" href="data:">
-<title>Nor → AST → like JavaScript → output</title>
+<title>Nand → AST → like JavaScript → output</title>
 </head><body>
-<h1>Nor → AST → like JavaScript → output</h1>
+<h1>Nand → AST → like JavaScript → output</h1>
 <main>
 <div class=diveditor id=divprog></div>
 <div class=diveditor id=divast></div>
@@ -9,7 +9,7 @@
 <div class=diveditor id=divrun></div>
 </main>
 
-<a href=https://github.com/code4fukui/Nor/>src on GitHub</a>
+<a href=https://github.com/code4fukui/Nand/>src on GitHub</a>
 
 <style>
 h1 {
@@ -27,7 +27,7 @@ a {
 </style>
 
 <script type="module">
-import { Nor } from "./Nor.js";
+import { Nand } from "./Nand.js";
 import escodegen from "https://code4fukui.github.io/escodegen/escodegen.js";
 import { monaco } from "https://code4fukui.github.io/monaco-editor/monaco.js";
 
@@ -77,7 +77,7 @@ let bkval = null;
 const onchange = () => {
   const src = prog.getValue();
   try {
-    const runtime = new Nor(src, (s) => {
+    const runtime = new Nand(src, (s) => {
       run.setValue(run.getValue() + s + "\n");
     });
     const astjson = runtime.ast;
